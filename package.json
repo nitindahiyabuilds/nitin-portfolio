@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "concurrently -n api,vite -c magenta,green \"npm run dev:api\" \"vite\"",
-    "dev:api": "node --watch server/index.js",
+    "dev:api": "node server/index.js",
     "dev:vite": "vite",
     "build": "vite build",
     "lint": "eslint .",
