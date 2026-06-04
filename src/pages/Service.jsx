@@ -22,7 +22,7 @@ const About = () => {
             
             <div className="aspect-[4/5] overflow-hidden bg-[#111]">
               <img 
-                src="src/assets/about.png"
+                src="https://images.stockcake.com/public/9/5/b/95b8b1fa-bf3e-4a06-a06d-37d076aaaa4b_large/cyberpunk-anime-programmer-stockcake.jpg"
                 alt="Sujal Garg"
                 className="w-full h-full object-cover grayscale contrast-125 opacity-80 group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-700"
               />
