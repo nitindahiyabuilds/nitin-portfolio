@@ -22,7 +22,7 @@ const About = () => {
             
             <div className="aspect-[4/5] overflow-hidden bg-[#111]">
               <img 
-                src="src/assets/file.svg"
+                src="src/assets/about.png"
                 alt="Sujal Garg"
                 className="w-full h-full object-cover grayscale contrast-125 opacity-80 group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-700"
               />
@@ -85,7 +85,7 @@ const About = () => {
 
             <motion.div className="mt-12">
               <button className="text-[10px] font-bold uppercase tracking-[0.3em] text-white border-b-2 border-accent pb-1 hover:text-accent transition-colors">
-                Download_Full_CV.pdf
+                {/* Download_Full_CV.pdf */}
               </button>
             </motion.div>
           </motion.div>
