@@ -7,20 +7,20 @@ const projects = [
     category: "web App / Transportation",
     description: "A clone of the popular ride sharing app uber, built with React, Node.js, express, MongoDb, Tailwindcss and Vercel.",
     tags: ["React", "Node.js", "express", "MongoDB", "Tailwind", "Vercel"],
-    image: "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?q=80&w=1200", 
-    link: "https://uber-clone-two-rouge.vercel.app/",
+    image: "/Users/sujalgarg/portfolio/src/assets/image.png",
+    link: "https://uber-clone-nynm.onrender.com/",
     github: "https://github.com/sujallgarg/Uber-Clone",
-  
+
   },
   {
     title: "Portfolio-Site",
     category: "web App / Portfolio",
     description: "A Portfolio website built with React, Node.js, express, MongoDb, Tailwindcss and Vercel.",
     tags: ["React", "Node.js", "express", "MongoDB", "Tailwind", "Vercel"],
-    image: "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?q=80&w=1200", 
+    image: "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?q=80&w=1200",
     link: "https://sujalgarg.vercel.app/",
     github: "https://github.com/sujallgarg/portfolio",
-  
+
   }
 ];
 
@@ -52,15 +52,14 @@ const Projects = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: index * 0.2 }}
-              className={`group relative overflow-hidden bg-[#111] border border-white/5 p-4 hover:border-white/20 transition-all duration-300 ${
-                index % 3 === 0 ? "md:col-span-2" : ""
-              }`}
+              className={`group relative overflow-hidden bg-[#111] border border-white/5 p-4 hover:border-white/20 transition-all duration-300 ${index % 3 === 0 ? "md:col-span-2" : ""
+                }`}
             >
               {/* CRUCIAL: Absolute Invisible Overlay Link for Card Clickability */}
-              <a 
-                href={project.link} 
-                target="_blank" 
-                rel="noopener noreferrer" 
+              <a
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="absolute inset-0 z-20 cursor-pointer"
                 aria-label={`Open live site for ${project.title}`}
               />
@@ -68,13 +67,13 @@ const Projects = () => {
               {/* Image Container */}
               <div className="relative h-[300px] md:h-[450px] overflow-hidden bg-black">
                 {project.image ? (
-               <iframe 
-                  src={project.link} 
-                  title={`Live preview of ${project.title}`}
-                  className="w-full h-full border-none opacity-70 group-hover:opacity-100 transition-all duration-500 pointer-events-none"
-                  loading="lazy"
-                  sandbox="allow-scripts allow-same-origin"
-                />
+                  <iframe
+                    src={project.link}
+                    title={`Live preview of ${project.title}`}
+                    className="w-full h-full border-none opacity-70 group-hover:opacity-100 transition-all duration-500 pointer-events-none"
+                    loading="lazy"
+                    sandbox="allow-scripts allow-same-origin"
+                  />
                 ) : (
                   <div className="w-full h-full bg-zinc-900 flex items-center justify-center border border-white/5 opacity-40 group-hover:opacity-60 transition-opacity">
                     <span className="text-zinc-600 text-xs font-mono tracking-widest">[ NO PREVIEW GENERATED ]</span>
@@ -114,10 +113,10 @@ const Projects = () => {
 
                 {/* The Repository Source Link (Kept functional using relative z-index hierarchy) */}
                 {project.github && (
-                  <a 
-                    href={project.github} 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="text-[10px] text-zinc-500 font-bold tracking-[0.3em] uppercase border-b border-transparent pb-1 hover:border-white hover:text-white transition-all"
                   >
                     Repository 🛠️
