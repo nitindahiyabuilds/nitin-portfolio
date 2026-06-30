@@ -3,6 +3,32 @@ import { motion } from 'framer-motion';
 
 const projects = [
   {
+    title: "Mahqee",
+    category: "e-commerce",
+    description: "A modern beauty e-commerce platform built with Next.js 16, React 19, TypeScript, and App Router.Features include product catalog, shopping cart, secure checkout, custom admin dashboard, file-based backend APIs, WhatsApp Business integration for instant order confirmation, responsive Apple-inspired UI, and a lightweight JSON database.",
+    tags: ["Next.js",
+  "React",
+  "TypeScript",
+  "App Router",
+  "REST API",
+  "WhatsApp Business API",
+  "JSON Database",
+  "File System",
+  "Context API",
+  "Responsive Design",
+  "E-commerce",
+  "Shopping Cart",
+  "Checkout",
+  "Admin Dashboard",
+  "Web Audio API",
+  "LocalStorage",
+  "Full Stack"],
+    image: "/Users/sujalgarg/portfolio/src/assets/mahqee.png",
+    link: "https://mahqee.com/",
+    github: "https://github.com/sujallgarg/mahqee",
+
+  },
+  {
     title: "Uber-Clone",
     category: "web App / Transportation",
     description: "A clone of the popular ride sharing app uber, built with React, Node.js, express, MongoDb, Tailwindcss and Vercel.",
@@ -39,7 +65,7 @@ const Projects = () => {
             </h3>
           </div>
           <p className="text-secondary text-xs uppercase tracking-widest opacity-50">
-            [ Total Entries: 02 ]
+            [ Total Entries: 03 ]
           </p>
         </div>
 
