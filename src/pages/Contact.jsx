@@ -5,34 +5,36 @@ const apiBase = import.meta.env.VITE_API_URL ?? ''
 
 const ContactTerminal = () => {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
-  const [submitted, setSubmitted] = useState(false);
-  const [submitting, setSubmitting] = useState(false);
-  const [error, setError] = useState('');
+  const [status, setStatus] = useState({ loading: false, success: null, error: null });
 
+  // Update state dynamically as user types
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
+  // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setError('');
-    setSubmitting(true);
+    setStatus({ loading: true, success: null, error: null });
+
     try {
-      const res = await fetch(`${apiBase}/api/contact`, {
+      const response = await fetch(`${apiBase || 'http://localhost:3001'}/api/contact`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
       });
-      const data = await res.json().catch(() => ({}));
-      if (!res.ok) {
-        throw new Error(data.error || 'Transmission failed');
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setStatus({ loading: false, success: 'Message sent successfully!', error: null });
+        setFormData({ name: '', email: '', message: '' }); // Clear form fields
+      } else {
+        setStatus({ loading: false, success: null, error: data.error || 'Something went wrong.' });
       }
-      setSubmitted(true);
-      setFormData({ name: '', email: '', message: '' });
-    } catch (err) {
-      setError(err instanceof Error ? err.message : 'Something went wrong');
-    } finally {
-      setSubmitting(false);
+    } catch (error) {
+      console.error(error);
+      setStatus({ loading: false, success: null, error: 'Failed to connect to the server.' });
     }
   };
 
@@ -74,6 +76,7 @@ const ContactTerminal = () => {
                 <input 
                   type="text" 
                   name="name"
+                  value={formData.name}
                   onChange={handleChange}
                   className="bg-transparent border-none outline-none text-white w-full text-sm" 
                   placeholder="enter_alias..."
@@ -92,6 +95,7 @@ const ContactTerminal = () => {
                 <input 
                   type="email" 
                   name="email"
+                  value={formData.email}
                   onChange={handleChange}
                   className="bg-transparent border-none outline-none text-white w-full text-sm" 
                   placeholder="user@domain.com"
@@ -109,6 +113,7 @@ const ContactTerminal = () => {
                 <span className="text-accent mt-1">{`>`}</span>
                 <textarea 
                   name="message"
+                  value={formData.message}
                   onChange={handleChange}
                   rows={4}
                   className="bg-transparent border-none outline-none text-white w-full text-sm resize-none" 
@@ -124,26 +129,26 @@ const ContactTerminal = () => {
                 System_Time: {new Date().toLocaleTimeString()}
               </div>
               <div className="flex flex-col items-end gap-2">
-                {error && (
+                {status.error && (
                   <p className="text-[9px] text-red-400/90 font-mono uppercase tracking-widest max-w-xs text-right">
-                    {error}
+                    {status.error}
                   </p>
                 )}
                 <motion.button
-                  whileHover={{ scale: submitting ? 1 : 1.05 }}
-                  whileTap={{ scale: submitting ? 1 : 0.95 }}
+                  whileHover={{ scale: status.loading ? 1 : 1.05 }}
+                  whileTap={{ scale: status.loading ? 1 : 0.95 }}
                   type="submit"
-                  disabled={submitting}
+                  disabled={status.loading}
                   className="bg-white text-black px-8 py-3 text-[10px] font-bold uppercase tracking-widest hover:bg-accent transition-colors disabled:opacity-50 disabled:pointer-events-none"
                 >
-                  {submitting ? 'Transmitting…' : 'Execute_Transfer'}
+                  {status.loading ? 'Transmitting…' : 'Execute_Transfer'}
                 </motion.button>
               </div>
             </div>
           </form>
 
           {/* Success State Overlay */}
-          {submitted && (
+          {status.success && (
             <motion.div 
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -155,7 +160,8 @@ const ContactTerminal = () => {
               <h4 className="text-white font-mono text-sm uppercase tracking-[0.5em] mb-2">Transmission_Sent</h4>
               <p className="text-white/40 text-[10px] uppercase font-mono tracking-widest">Payload received. standby for response.</p>
               <button 
-                onClick={() => setSubmitted(false)}
+                type="button"
+                onClick={() => setStatus({ loading: false, success: null, error: null })}
                 className="mt-8 text-[9px] text-accent underline uppercase tracking-widest"
               >
                 Send_New_Packet

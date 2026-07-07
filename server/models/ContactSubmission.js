@@ -1,13 +1,16 @@
-import mongoose from 'mongoose'
+import { pool } from '../config/db.js';
 
-const contactSubmissionSchema = new mongoose.Schema(
-  {
-    name: { type: String, required: true, trim: true, maxlength: 200 },
-    email: { type: String, required: true, trim: true, maxlength: 320 },
-    message: { type: String, required: true, trim: true, maxlength: 10000 },
-  },
-  { timestamps: true },
-)
+const ContactSubmission = {
+  create: async ({ name, email, message }) => {
+    const queryText = `
+      INSERT INTO contact_submissions (name, email, message)
+      VALUES ($1, $2, $3)
+      RETURNING *;
+    `;
+    const values = [name, email, message];
+    const result = await pool.query(queryText, values);
+    return result.rows[0];
+  }
+};
 
-export default mongoose.models.ContactSubmission ??
-  mongoose.model('ContactSubmission', contactSubmissionSchema)
+export default ContactSubmission;
