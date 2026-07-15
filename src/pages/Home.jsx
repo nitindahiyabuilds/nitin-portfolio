@@ -9,6 +9,7 @@ import Projects from './Projects'
 import About from './Service'
 
 
+
 export default function Home() {
   const { hash } = useLocation()
 

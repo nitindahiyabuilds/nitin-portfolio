@@ -3,17 +3,20 @@ import { motion } from 'framer-motion';
 
 // Replace these with your actual logo paths or CDN links
 const skills = [
-  { name: "React", icon: "https://cdn.simpleicons.org/react/ffffff" },
-  { name: "Node.js", icon: "https://cdn.simpleicons.org/nodedotjs/ffffff" },
-  { name: "TypeScript", icon: "https://cdn.simpleicons.org/typescript/ffffff" },
-  { name: "Tailwind", icon: "https://cdn.simpleicons.org/tailwindcss/ffffff" },
-  { name: "MongoDB", icon: "https://cdn.simpleicons.org/mongodb/ffffff" },
-  { name: "Next.js", icon: "https://cdn.simpleicons.org/nextdotjs/ffffff" },
-  { name: "Express", icon: "https://cdn.simpleicons.org/express/ffffff" },
-  { name: "Rust", icon: "https://cdn.simpleicons.org/rust/ffffff" },
-  { name: "Python", icon: "https://cdn.simpleicons.org/python/ffffff" },
-  { name: "Vercel", icon: "https://cdn.simpleicons.org/vercel/ffffff" },
-  { name: "GitHub", icon: "https://cdn.simpleicons.org/github/ffffff" },
+  { name: "React", icon: "https://cdn.simpleicons.org/react/61DAFB" },
+  { name: "Node.js", icon: "https://cdn.simpleicons.org/nodedotjs/339933" },
+  { name: "TypeScript", icon: "https://cdn.simpleicons.org/typescript/3178C6" },
+  { name: "Tailwind", icon: "https://cdn.simpleicons.org/tailwindcss/06B6D4" },
+  { name: "MongoDB", icon: "https://cdn.simpleicons.org/mongodb/47A248" },
+  { name: "Next.js", icon: "https://cdn.simpleicons.org/nextdotjs/FFFFFF" },
+  { name: "Express", icon: "https://cdn.simpleicons.org/express/FFFFFF" },
+  { name: "Rust", icon: "https://cdn.simpleicons.org/rust/D34516" },
+  { name: "Python", icon: "https://cdn.simpleicons.org/python/3776AB" },
+  { name: "Vercel", icon: "https://cdn.simpleicons.org/vercel/FFFFFF" },
+  { name: "GitHub", icon: "https://cdn.simpleicons.org/github/FFFFFF" },
+  { name: "Langchain", icon: "https://cdn.simpleicons.org/langchain/7FC8FF" },
+  { name: "Supabase", icon: "https://cdn.simpleicons.org/supabase/3ECF8E" },
+  { name: "Langgraph", icon: "https://cdn.simpleicons.org/langgraph/7FC8FF" },
 ];
 
 const SkillSlider = () => {
@@ -52,7 +55,7 @@ const SkillSlider = () => {
               <img 
                 src={skill.icon} 
                 alt={skill.name} 
-                className="w-8 h-8 object-contain grayscale brightness-200"
+                className="w-8 h-8 object-contain"
               />
               <span className="text-white text-xs font-mono tracking-widest uppercase">
                 {skill.name}

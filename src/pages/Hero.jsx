@@ -50,12 +50,18 @@ const Hero = () => {
           transition={{ delay: 0.6 }}
           className="mt-12 flex flex-wrap justify-center gap-6"
         >
-          <a href="#projects" className="group relative px-8 py-3 overflow-hidden border border-white/20 rounded-sm">
+          <button 
+            onClick={(e) => {
+              e.preventDefault();
+              window.dispatchEvent(new CustomEvent("open-resume"));
+            }}
+            className="group relative px-8 py-3 overflow-hidden border border-white/20 rounded-sm bg-transparent cursor-none"
+          >
             <span className="relative z-10 text-white text-[10px] uppercase tracking-[0.2em] font-bold group-hover:text-black transition-colors duration-300">
              Resume
             </span>
             <div className="absolute inset-0 bg-white translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out" />
-          </a>
+          </button>
           
           <button className="text-white/40 text-[10px] uppercase tracking-[0.2em] hover:text-white transition-all duration-300">
             Scroll to Explore
