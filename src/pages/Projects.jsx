@@ -3,6 +3,16 @@ import { motion } from 'framer-motion';
 
 const projects = [
   {
+    title: "Cognify",
+    category: "Web App / AI",
+    description: "An AI-powered productivity platform built with modern web technologies.",
+    tags: ["React","Next.js","TypeScript","Node.js","Express", "Postgress", "Tailwind", "Vercel", "AI","Stripe"],
+    image: "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?q=80&w=1200",
+    link: "https://cognify-wine-chi.vercel.app/",
+    github: "https://github.com/sujallgarg/cognify",
+
+  },
+  {
     title: "Mahqee",
     category: "e-commerce",
     description: "A modern beauty e-commerce platform built with Next.js 16, React 19, TypeScript, and App Router.Features include product catalog, shopping cart, secure checkout, custom admin dashboard, file-based backend APIs, WhatsApp Business integration for instant order confirmation, responsive Apple-inspired UI, and a lightweight JSON database.",
@@ -48,16 +58,6 @@ const projects = [
     github: "https://github.com/sujallgarg/portfolio",
 
   },
-  // {
-  //   title: "Cognify",
-  //   category: "Web App / AI",
-  //   description: "An AI-powered productivity platform built with modern web technologies.",
-  //   tags: ["React","Next.js","TypeScript","Node.js","Express", "Postgress", "Tailwind", "Vercel", "AI","Stripe"],
-  //   image: "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?q=80&w=1200",
-  //   link: "https://cognify-wine-chi.vercel.app/",
-  //   github: "https://github.com/sujallgarg/cognify",
-
-  // }
 ];
 
 const Projects = () => {
@@ -75,7 +75,7 @@ const Projects = () => {
             </h3>
           </div>
           <p className="text-secondary text-xs uppercase tracking-widest opacity-50">
-            [ Total Entries: 03 ]
+            [ Total Entries: 04 ]
           </p>
         </div>
 
