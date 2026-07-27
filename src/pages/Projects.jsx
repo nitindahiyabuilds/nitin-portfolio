@@ -8,7 +8,7 @@ const projects = [
     description: "An AI-powered productivity platform built with modern web technologies.",
     tags: ["React","Next.js","TypeScript","Node.js","Express", "Postgress", "Tailwind", "Vercel", "AI","Stripe"],
     image: "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?q=80&w=1200",
-    link: "https://cognify-wine-chi.vercel.app/",
+    link: "https://cognifyforn.onrender.com/",
     github: "https://github.com/sujallgarg/cognify",
 
   },
