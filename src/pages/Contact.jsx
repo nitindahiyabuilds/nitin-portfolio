@@ -38,6 +38,13 @@ const ContactTerminal = () => {
     }
   };
 
+  const socialLinks = [
+    { name: 'GITHUB', href: 'https://github.com/nitindahiyabuilds' },
+    { name: 'X / TWITTER', href: 'https://x.com/nitin_builds?s=11' },
+    { name: 'MEDIUM', href: 'https://medium.com/@nitin_dahiya' },
+    { name: 'LINKEDIN', href: 'https://www.linkedin.com/in/nitin-dahiya-9848b3258/' },
+  ];
+
   return (
     <section id="contact" className="py-24 px-6 bg-black border-t border-white/5">
       <div className="max-w-4xl mx-auto">
@@ -59,10 +66,31 @@ const ContactTerminal = () => {
         <div className="bg-[#080808] border-x border-b border-white/10 rounded-b-md p-8 font-mono relative">
           
           <div className="mb-8 text-white/40 text-[11px] leading-relaxed">
-            <span className="text-accent">root@sujal:~$</span> ./initiate_contact <br />
+            <span className="text-accent">root@nitin:~$</span> ./initiate_contact <br />
             Status: Secure Channel Established <br />
             Encryption: AES-256 Enabled <br />
             ------------------------------------------
+          </div>
+
+          <div className="mb-8 border border-white/10 bg-white/[0.02] p-4">
+            <p className="text-[10px] uppercase tracking-[0.26em] text-white/40 mb-2">REMOTE — OPEN TO WORKING WITH PEOPLE EVERYWHERE</p>
+            <p className="text-sm text-white/70 leading-relaxed">
+              Always open to interesting conversations, ideas and people building things.
+            </p>
+          </div>
+
+          <div className="mb-8 flex flex-wrap gap-4">
+            {socialLinks.map((link) => (
+              <a
+                key={link.name}
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[10px] uppercase tracking-[0.24em] text-white/70 border-b border-white/15 pb-1 transition-colors hover:text-white hover:border-accent"
+              >
+                {link.name}
+              </a>
+            ))}
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-8">

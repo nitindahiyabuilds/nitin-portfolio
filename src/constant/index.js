@@ -23,6 +23,27 @@ export const projects = [
   },
   {
     number: '03',
+    title: 'Atlas',
+    category: 'BACKEND / ENGINEERING SYSTEM',
+    description:
+      'A production-oriented backend system built with FastAPI, PostgreSQL and SQLAlchemy, designed with clean architecture, authentication, migrations and ownership boundaries so the system can evolve without requiring a rewrite as it grows.',
+    tags: [
+      'Python',
+      'FastAPI',
+      'PostgreSQL',
+      'SQLAlchemy',
+      'Alembic',
+      'Docker',
+      'REST API',
+      'JWT',
+      'Backend Architecture',
+    ],
+    caseStudy: null,
+    github: null,
+    type: 'product',
+  },
+  {
+    number: '04',
     title: 'Win Forensics',
     category: 'SECURITY / DIGITAL FORENSICS',
     description:
@@ -33,7 +54,7 @@ export const projects = [
     type: 'product',
   },
   {
-    number: '04',
+    number: '05',
     title: 'TECHNICAL CONSULTING',
     category: 'TECHNICAL CONSULTING / CLIENT ENGINEERING',
     description:
