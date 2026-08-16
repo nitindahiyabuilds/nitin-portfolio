@@ -3,8 +3,6 @@ import { Outlet, useLocation } from 'react-router-dom'
 import CustomCursor from '../components/common/CustomCursor'
 
 import Navbar from '../components/common/Navbar'
-import Footer from '../components/common/Footer'
-import Hero from '../pages/Hero'
 
 export default function RootLayout() {
   const { pathname } = useLocation()
@@ -14,11 +12,9 @@ export default function RootLayout() {
   }, [pathname])
 
   return (
-    <div className="min-h-screen bg-black text-white cursor-none pt-[15px]">
+    <div className="min-h-screen bg-[color:var(--color-bg)] text-[color:var(--color-text)] pt-[15px]">
       <CustomCursor />
       <Navbar />
-      
-      
       <Outlet key={pathname} />
     </div>
   )

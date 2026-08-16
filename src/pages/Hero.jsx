@@ -1,33 +1,32 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-
 const Hero = () => {
   return (
-    <section className="relative w-full h-screen flex flex-col justify-center items-center overflow-hidden bg-black">
-      
-      
-      {/* 1. Subtle Background Grid (Matches the "Scope" aesthetic) */}
-      <div className="absolute inset-0 z-0 opacity-20" 
-           style={{ 
-             backgroundImage: `linear-gradient(#ffffff0a 1px, transparent 1px), linear-gradient(90deg, #ffffff0a 1px, transparent 1px)`,
-             backgroundSize: '40px 40px' 
-           }} 
+    <section className="relative w-full h-screen flex flex-col justify-center items-center overflow-hidden bg-[color:var(--color-bg)]">
+      <div
+        className="absolute inset-0 z-0 opacity-20"
+        style={{
+          backgroundImage: `linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px)`,
+          backgroundSize: '40px 40px',
+        }}
       />
 
-      {/* 2. Main Content */}
-      <div className="relative z-10 text-center px-4">
+      <div className="relative z-10 text-center px-4 max-w-4xl">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
+          transition={{ duration: 0.8, ease: 'easeOut' }}
         >
-          <span className="text-accent text-[10px] tracking-[0.5em] uppercase mb-4 block font-medium">
-            Full Stack Developer
+          <span className="text-[color:var(--color-accent)] text-[10px] tracking-[0.45em] uppercase mb-5 block font-medium">
+            BUILDER · STARTUP ENGINEER
           </span>
-          
-          <h1 className="text-white text-6xl md:text-8xl font-black tracking-tighter leading-tight">
-            SUJAL <span className="text-transparent" style={{ WebkitTextStroke: "1px #ffffff60" }}>GARG</span>
+
+          <h1 className="text-[color:var(--color-text)] text-5xl sm:text-6xl md:text-7xl lg:text-[6.5rem] font-black tracking-[-0.06em] leading-[0.9]">
+            I BUILD SOFTWARE
+            <span className="mt-2 block text-transparent" style={{ WebkitTextStroke: '1px rgba(255,255,255,0.75)' }}>
+              THAT SOLVES PROBLEMS.
+            </span>
           </h1>
         </motion.div>
 
@@ -35,48 +34,43 @@ const Hero = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.4, duration: 1 }}
-          className="mt-6 text-secondary text-sm md:text-base max-w-xl mx-auto leading-relaxed tracking-wide opacity-70"
+          className="mt-7 text-[color:var(--color-text-secondary)] text-sm md:text-base max-w-2xl mx-auto leading-relaxed tracking-[0.01em]"
         >
-          {/* Building high-performance SaaS */}
-          {/* <span className="text-white font-semibold">Lumina</span> and 
-          <span className="text-white font-semibold"> IPOVault</span>.  */}
-           {/* Bridging the gap between technical architecture and cinematic design. */}
+          I build backend systems, AI-powered software and automations. I like working on ambiguous problems, learning fast, and turning ideas into things people can actually use.
         </motion.p>
 
-        {/* 3. CTA Buttons with "Scope" hover logic */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6 }}
-          className="mt-12 flex flex-wrap justify-center gap-6"
+          className="mt-10 flex flex-wrap justify-center gap-4 sm:gap-6"
         >
-          <button 
-            onClick={(e) => {
-              e.preventDefault();
-              window.dispatchEvent(new CustomEvent("open-resume"));
-            }}
-            className="group relative px-8 py-3 overflow-hidden border border-white/20 rounded-sm bg-transparent cursor-none"
+          <a
+            href="#projects"
+            className="group relative inline-flex items-center justify-center px-6 py-3 overflow-hidden border border-white/15 rounded-full bg-white text-black text-[10px] uppercase tracking-[0.22em] font-bold transition-colors duration-300 hover:bg-transparent hover:text-white"
           >
-            <span className="relative z-10 text-white text-[10px] uppercase tracking-[0.2em] font-bold group-hover:text-black transition-colors duration-300">
-             Resume
-            </span>
-            <div className="absolute inset-0 bg-white translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out" />
-          </button>
-          
-          <button className="text-white/40 text-[10px] uppercase tracking-[0.2em] hover:text-white transition-all duration-300">
-            Scroll to Explore
-          </button>
-        </motion.div>
-      </div>
+            VIEW MY WORK
+          </a>
 
-      {/* 4. Coordinate Display (Bottom Right) */}
-      
-      <div className="absolute bottom-10 right-10 hidden lg:block">
-        <div className="text-white/20 text-[9px] font-mono flex flex-col gap-1 uppercase tracking-widest ">
-          <span className="text-accent/40 animate-pulse">SYSTEM: ONLINE</span>
+          <a
+            href="https://github.com/"
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center justify-center px-6 py-3 border border-white/15 rounded-full text-[10px] uppercase tracking-[0.22em] font-bold text-[color:var(--color-text)] hover:border-white/30 hover:bg-white/5 transition-colors duration-300"
+          >
+            GITHUB
+          </a>
+        </motion.div>
+
+        <div className="mt-12 text-center">
+          <div className="text-[10px] uppercase tracking-[0.35em] text-[color:var(--color-text-muted)]">
+            CURRENTLY BUILDING
+          </div>
+          <div className="mt-3 text-[11px] uppercase tracking-[0.3em] text-[color:var(--color-text-secondary)]">
+            AI · BACKEND · AUTOMATION
+          </div>
         </div>
       </div>
-
     </section>
   );
 };

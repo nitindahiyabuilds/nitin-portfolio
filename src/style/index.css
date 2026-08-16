@@ -1,2 +1,59 @@
 @import "tailwindcss";
-/* Add this class to your Project Images */
+
+:root {
+  --color-bg: #0b1016;
+  --color-surface: #111a24;
+  --color-text: #f5f7fa;
+  --color-text-secondary: #dfe6ee;
+  --color-text-muted: #8b98a8;
+  --color-border: rgba(255,255,255,0.12);
+  --color-accent: #b9f2d4;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: radial-gradient(circle at top, rgba(22, 33, 45, 0.9), var(--color-bg) 42%);
+  color: var(--color-text);
+  font-family: Inter, "Segoe UI", sans-serif;
+  line-height: 1.5;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background: rgba(185, 242, 212, 0.25);
+  color: var(--color-text);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+a,
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+#root {
+  isolation: isolate;
+}
