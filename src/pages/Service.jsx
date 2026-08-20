@@ -45,7 +45,7 @@ const About = () => {
 
             <div className="space-y-6 text-secondary text-sm md:text-base leading-relaxed opacity-70">
               <p>
-                I don't particularly enjoy working inside a narrow box. I like understanding the whole problem — what we're building, why it matters, how the pieces fit together, and what could go wrong once people actually start using it.
+                I don't particularly enjoy working inside a narrow box. I like understanding the whole problem - what we're building, why it matters, how the pieces fit together, and what could go wrong once people actually start using it.
               </p>
               <p>
                 My work usually sits somewhere between backend systems, AI, automation, infrastructure and security. I'm especially drawn to early-stage problems where there's more figuring things out than following a predefined path.

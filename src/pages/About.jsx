@@ -5,13 +5,13 @@ const capabilities = [
   {
     id: '01',
     title: 'Backend Systems',
-    description: 'Designing APIs and backend systems that are structured to evolve — from data models and authentication to integrations, background workflows and deployment.',
+    description: 'Designing APIs and backend systems that are structured to evolve - from data models and authentication to integrations, background workflows and deployment.',
     tags: ['FastAPI', 'PostgreSQL', 'REST', 'SQL', 'Docker'],
   },
   {
     id: '02',
     title: 'AI Engineering',
-    description: 'Building practical AI systems around real products — LLM workflows, context, agents, APIs and automation rather than AI for the sake of AI.',
+    description: 'Building practical AI systems around real products - LLM workflows, context, agents, APIs and automation rather than AI for the sake of AI.',
     tags: ['LLMs', 'AI Workflows', 'RAG', 'Python', 'APIs'],
   },
   {
@@ -23,7 +23,7 @@ const capabilities = [
   {
     id: '04',
     title: 'Security-Minded Engineering',
-    description: 'I bring a security lens into the systems I build — thinking about authentication, attack surfaces, permissions, failure modes and basic auditing from the start.',
+    description: 'I bring a security lens into the systems I build - thinking about authentication, attack surfaces, permissions, failure modes and basic auditing from the start.',
     tags: ['Application Security', 'API Security', 'OWASP', 'Auditing', 'Threat Modeling'],
   },
 ];
@@ -90,7 +90,7 @@ const Services = () => {
             Build <span className="text-accent">→</span> Test <span className="text-accent">→</span> Secure <span className="text-accent">→</span> Ship <span className="text-accent">→</span> Improve
           </p>
           <p className="mt-4 max-w-2xl text-secondary text-sm leading-relaxed opacity-60">
-            I like working close to the problem — understanding what needs to exist, what could break, and what the system might become next.
+            I like working close to the problem - understanding what needs to exist, what could break, and what the system might become next.
           </p>
         </div>
       </div>
