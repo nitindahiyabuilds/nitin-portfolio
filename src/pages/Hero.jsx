@@ -52,7 +52,7 @@ const Hero = () => {
               </a>
 
               <a
-                href="https://github.com/NitinDahiya"
+                href="https://github.com/nitindahiyabuilds"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center px-6 py-3 border border-white/15 rounded-full text-[10px] uppercase tracking-[0.22em] font-bold text-white hover:border-white/30 hover:bg-white/5 transition-colors duration-300"
