@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { motion, AnimatePresence } from 'framer-motion';
-import Resumefax from './Resumefax';
+import { motion } from 'framer-motion';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isResumeOpen, setIsResumeOpen] = useState(false);
   const { pathname } = useLocation();
 
   useEffect(() => {
@@ -14,17 +12,11 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  useEffect(() => {
-    const handleOpen = () => setIsResumeOpen(true);
-    window.addEventListener('open-resume', handleOpen);
-    return () => window.removeEventListener('open-resume', handleOpen);
-  }, []);
-
   const navLinks = [
     { name: 'WORK', to: '/projects', hash: '#projects' },
     { name: 'ABOUT', to: '/about', hash: '#about' },
     { name: 'THINKING', to: '/', hash: '#thinking' },
-    { name: 'RESUME', isAction: true },
+    { name: 'RESUME', isResume: true },
     { name: 'CONTACT', to: '/contact', hash: '#contact' },
   ];
 
@@ -49,16 +41,18 @@ const Navbar = () => {
 
         <div className="hidden md:flex items-center gap-7 lg:gap-8">
           {navLinks.map((link) => {
-            if (link.isAction) {
+            if (link.isResume) {
               return (
-                <button
+                <a
                   key={link.name}
-                  onClick={() => setIsResumeOpen(!isResumeOpen)}
+                  href="/resume/Nitin_dev_resume.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="relative text-[10px] cursor-pointer text-white/80 uppercase tracking-[0.24em] font-medium hover:text-white transition-colors duration-300 group bg-transparent border-none outline-none"
                 >
                   {link.name}
                   <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-white transition-all duration-300 group-hover:w-full" />
-                </button>
+                </a>
               );
             }
 
@@ -80,16 +74,15 @@ const Navbar = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6 }}
         >
-          <Link
-            to={pathname === '/' ? '#contact' : '/contact'}
+          <a
+            href="#contact"
             className="hidden sm:inline-block text-[10px] px-5 py-2 border border-white/15 rounded-full text-white uppercase tracking-[0.2em] font-bold hover:bg-white hover:text-black z-10 transition-colors duration-300 text-center"
           >
             LET&apos;S TALK
-          </Link>
+          </a>
         </motion.div>
 
         <button
-          onClick={() => setIsResumeOpen(!isResumeOpen)}
           className="md:hidden flex flex-col gap-1.5 items-end bg-transparent border-none outline-none cursor-pointer"
         >
           <div className="w-5 h-[1px] bg-white" />
@@ -97,11 +90,6 @@ const Navbar = () => {
         </button>
       </motion.nav>
 
-      <AnimatePresence>
-        {isResumeOpen && (
-          <Resumefax onClose={() => setIsResumeOpen(false)} />
-        )}
-      </AnimatePresence>
     </header>
   );
 };
