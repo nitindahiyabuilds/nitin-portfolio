@@ -36,7 +36,7 @@ const About = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <h2 className="text-accent text-[10px] tracking-[0.5em] uppercase mb-4 font-mono">
-              // DECRYPTING_IDENTITY
+              DECRYPTING_IDENTITY
             </h2>
             <h3 className="text-white text-4xl md:text-6xl font-black uppercase tracking-tighter mb-8 leading-none">
               THE THINKING <br />
@@ -54,24 +54,24 @@ const About = () => {
 
             <div className="mt-10 grid grid-cols-2 gap-4">
               <div className="border-l border-white/10 pl-4">
-                <span className="block text-[10px] uppercase tracking-widest text-white/40 font-mono">SECURITY BY DEFAULT</span>
+                <span className="block text-[10px] uppercase tracking-widest text-[#b9f2d4]/70 font-mono">SECURITY BY DEFAULT</span>
                 <span className="mt-2 block text-sm leading-relaxed text-white/70">I bring an additional security lens to the systems I build.</span>
               </div>
               <div className="border-l border-white/10 pl-4">
-                <span className="block text-[10px] uppercase tracking-widest text-white/40 font-mono">FOUNDER MINDSET</span>
+                <span className="block text-[10px] uppercase tracking-widest text-[#b9f2d4]/70 font-mono">FOUNDER MINDSET</span>
                 <span className="mt-2 block text-sm leading-relaxed text-white/70">I think beyond implementation — product, users, scale and what comes next.</span>
               </div>
               <div className="border-l border-white/10 pl-4">
-                <span className="block text-[10px] uppercase tracking-widest text-white/40 font-mono">REMOTE / WORLDWIDE</span>
+                <span className="block text-[10px] uppercase tracking-widest text-[#b9f2d4]/70 font-mono">REMOTE / WORLDWIDE</span>
                 <span className="mt-2 block text-sm leading-relaxed text-white/70">Open to working remotely with people and teams anywhere.</span>
               </div>
               <div className="border-l border-white/10 pl-4">
-                <span className="block text-[10px] uppercase tracking-widest text-white/40 font-mono">STARTUP ENERGY</span>
+                <span className="block text-[10px] uppercase tracking-widest text-[#b9f2d4]/70 font-mono">STARTUP ENERGY</span>
                 <span className="mt-2 block text-sm leading-relaxed text-white/70">I enjoy turning rough ideas into things that actually exist.</span>
               </div>
             </div>
 
-            <p className="mt-8 text-[10px] uppercase tracking-widest text-white/40 font-mono">
+            <p className="mt-10 text-[10px] uppercase tracking-[0.18em] text-white/60 font-mono">
               Always open to interesting conversations, ideas and people building things.
             </p>
           </motion.div>
