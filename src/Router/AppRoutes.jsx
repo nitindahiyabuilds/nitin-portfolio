@@ -6,7 +6,6 @@ import Services from '../pages/About'
 import About from '../pages/Service'
 import ContactTerminal from '../pages/Contact'
 import Hero from '../pages/Hero'
-import NavbarLogo from '../components/common/NavbarLogo'
 
 
 export default function AppRoutes() {
