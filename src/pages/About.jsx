@@ -1,31 +1,31 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-const services = [
+const capabilities = [
   {
-    id: "01",
-    title: "Full Stack Development",
-    description: "Building scalable SaaS architectures. Specialized in React, Node.js, and complex database management.",
-    features: ["Custom SaaS", "API Integration", "Database Design"]
-  },
-//   {
-//     id: "02",
-//     title: "Cinematic Video Editing",
-//     description: "High-end visual storytelling for brands. Precision-cut editing with a focus on rhythm, color grading, and narrative impact.",
-//     features: ["Color Grading", "Sound Design", "Motion Graphics"]
-//   },
-  {
-    id: "02",
-    title: "UI/UX Engineering",
-    description: "Designing technical, immersive interfaces that prioritize user flow without sacrificing the high-tech aesthetic.",
-    features: ["Interactive Prototyping", "Design Systems", "User Research"]
+    id: '01',
+    title: 'Backend Systems',
+    description: 'Designing APIs and backend systems that are structured to evolve — from data models and authentication to integrations, background workflows and deployment.',
+    tags: ['FastAPI', 'PostgreSQL', 'REST', 'SQL', 'Docker'],
   },
   {
-    id: "03",
-    title: "Technical Consulting",
-    description: "Helping startups bridge the gap between their vision and technical execution through clean code and modern stacks.",
-    features: ["Stack Audits", "Performance Optimization", "SEO Strategy"]
-  }
+    id: '02',
+    title: 'AI Engineering',
+    description: 'Building practical AI systems around real products — LLM workflows, context, agents, APIs and automation rather than AI for the sake of AI.',
+    tags: ['LLMs', 'AI Workflows', 'RAG', 'Python', 'APIs'],
+  },
+  {
+    id: '03',
+    title: 'Automation & Infrastructure',
+    description: 'Turning repetitive or operational work into reliable systems, with the infrastructure needed to run them beyond the local machine.',
+    tags: ['Python', 'Redis', 'Docker', 'CI/CD', 'AWS', 'GitHub Actions'],
+  },
+  {
+    id: '04',
+    title: 'Security-Minded Engineering',
+    description: 'I bring a security lens into the systems I build — thinking about authentication, attack surfaces, permissions, failure modes and basic auditing from the start.',
+    tags: ['Application Security', 'API Security', 'OWASP', 'Auditing', 'Threat Modeling'],
+  },
 ];
 
 const Services = () => {
@@ -33,61 +33,65 @@ const Services = () => {
     <section id="services" className="py-24 px-6 bg-black border-t border-white/5">
       <div className="max-w-7xl mx-auto">
         
-        {/* Header */}
         <div className="mb-20">
           <h2 className="text-accent text-[10px] tracking-[0.5em] uppercase mb-4">
-            Capabilities // Offerings
+            Engineering Capabilities
           </h2>
           <h3 className="text-white text-4xl md:text-6xl font-black uppercase tracking-tighter">
-            System <span className="text-transparent" style={{ WebkitTextStroke: "1px #ffffff60" }}>Solutions</span>
+            What I <span className="text-transparent" style={{ WebkitTextStroke: '1px #ffffff60' }}>Build</span>
           </h3>
         </div>
 
-        {/* Services Grid */}
-        <div className="flex flex-col  gap-px bg-white/5 border border-white/5">
-          {services.map((service, index) => (
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-px bg-white/5 border border-white/5">
+          {capabilities.map((capability, index) => (
             <motion.div
-              key={service.id}
+              key={capability.id}
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 1, delay: index * 0.1 }}
-              className="bg-black p-10 group relative overflow-hidden transition-all duration-500 hover:bg-[#080808]"
+              className="bg-black p-8 md:p-10 group relative overflow-hidden transition-all duration-500 hover:bg-[#080808]"
             >
-              {/* Service ID - Background Watermark */}
-              <span className="absolute -right-4 -bottom-4 text-9xl font-black text-white/[0.02] group-hover:text-white/[0.05] transition-colors duration-500">
-                {service.id}
-              </span>
-
               <div className="relative z-10">
                 <span className="text-accent font-mono text-xs mb-6 block tracking-widest">
-                  [{service.id}]
+                  [{capability.id}]
                 </span>
                 
-                <h4 className="text-white text-2xl font-bold uppercase tracking-tight mb-4">
-                  {service.title}
+                <h4 className="text-white text-xl md:text-2xl font-bold uppercase tracking-tight mb-4">
+                  {capability.title}
                 </h4>
                 
                 <p className="text-secondary text-sm leading-relaxed mb-8 opacity-60 max-w-sm">
-                  {service.description}
+                  {capability.description}
                 </p>
 
                 <ul className="flex flex-wrap gap-3">
-                  {service.features.map((feature) => (
+                  {capability.tags.map((tag) => (
                     <li 
-                      key={feature} 
+                      key={tag} 
                       className="text-[9px] uppercase tracking-widest text-white/40 border border-white/10 px-3 py-1 rounded-full group-hover:border-accent/40 group-hover:text-white transition-colors"
                     >
-                      + {feature}
+                      {tag}
                     </li>
                   ))}
                 </ul>
               </div>
 
-              {/* Hover Line Animation */}
               <div className="absolute top-0 left-0 w-1 h-0 bg-accent transition-all duration-500 group-hover:h-full" />
             </motion.div>
           ))}
+        </div>
+
+        <div className="mt-16 border-t border-white/10 pt-6">
+          <span className="text-accent font-mono text-[11px] tracking-[0.5em] uppercase">
+            How I Think
+          </span>
+          <p className="mt-6 text-white text-sm md:text-base font-mono uppercase tracking-[0.18em]">
+            Build <span className="text-accent">→</span> Test <span className="text-accent">→</span> Secure <span className="text-accent">→</span> Ship <span className="text-accent">→</span> Improve
+          </p>
+          <p className="mt-4 max-w-2xl text-secondary text-sm leading-relaxed opacity-60">
+            I like working close to the problem — understanding what needs to exist, what could break, and what the system might become next.
+          </p>
         </div>
       </div>
     </section>
