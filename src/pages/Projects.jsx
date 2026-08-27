@@ -29,9 +29,9 @@ const ProjectsPage = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.08 }}
             >
-              {project.title === 'Atlas' || project.title === 'AI Coach' ? (
+              {project.title === 'Atlas' || project.title === 'AI Coach' || project.title === 'ThreatMap' ? (
                 <Link
-                  to={project.title === 'Atlas' ? '/projects/atlas' : '/projects/ai-coach'}
+                  to={project.title === 'Atlas' ? '/projects/atlas' : project.title === 'AI Coach' ? '/projects/ai-coach' : '/projects/threatmap'}
                   className="block h-full"
                 >
                   <Projectcard project={project} />
