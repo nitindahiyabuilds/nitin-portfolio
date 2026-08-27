@@ -45,7 +45,7 @@ const Navbar = () => {
               return (
                 <a
                   key={link.name}
-                  href="/resume/Nitin_dev_resume.pdf"
+                  href="/resume/NitinDahiya_resume.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="relative text-[10px] cursor-pointer text-white/80 uppercase tracking-[0.24em] font-medium hover:text-white transition-colors duration-300 group bg-transparent border-none outline-none"
