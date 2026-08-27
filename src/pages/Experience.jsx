@@ -4,17 +4,17 @@ import { motion } from 'framer-motion';
 const experiences = [
   {
     period: 'Feb 2026 - May 2026',
-    role: 'Security Intern',
+    role: 'Intern',
     company: 'AbyM Technologies',
     location: 'Remote, Noida, India',
-    description: 'Worked on vulnerability assessments, automated scanning workflows, security classification and remediation documentation across internal web services.',
+    description: 'Ran structured vulnerability assessments across 7 to 8 internal web services using automated scanning pipelines, classified and prioritized security weaknesses before production deployment, and worked with infrastructure teams on remediation workflows and security controls.',
   },
   {
     period: 'Jul 2025 - Oct 2025',
-    role: 'Digital Forensics Intern',
+    role: 'Intern',
     company: 'National Cyber Forensics Lab (IFSO), Delhi Police',
     location: 'Delhi, India',
-    description: 'Worked with Windows registry hives, event logs and filesystem artifacts, and built Python automation for forensic artifact collection and analysis.',
+    description: 'Conducted digital forensic analysis on Windows endpoints, including registry hives, event logs and filesystem artifacts, and built Python automation for 80%+ of forensic artifact collection and log analysis. Received a formal Appreciation Letter from Delhi Police.',
   },
 ];
 
