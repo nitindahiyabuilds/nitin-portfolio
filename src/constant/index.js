@@ -1,85 +1,105 @@
 export const projects = [
   {
     number: '01',
-    title: 'ThreatMap',
-    category: 'SECURITY / AUTOMATION',
+    title: 'AI Coach',
+    category: 'AI / PRODUCT / APPLICATION ENGINEERING',
+    status: 'BUILDING',
+    featured: true,
     description:
-      'An infrastructure security platform focused on automated reconnaissance, vulnerability orchestration and AI-assisted analysis.',
-    tags: ['Python', 'Security Automation', 'Infrastructure Security', 'AI'],
+      'An AI-powered coaching product that combines persistent user data, deterministic analysis and LLM reasoning to generate context-aware recommendations.',
+    tags: [
+      'Next.js',
+      'TypeScript',
+      'Supabase',
+      'PostgreSQL',
+      'LLM APIs',
+      'AI Workflows',
+    ],
     caseStudy: null,
     github: null,
     type: 'product',
   },
+
   {
     number: '02',
-    title: 'AI Lifestyle System',
-    category: 'AI / BACKEND / PRODUCT',
-    description:
-      'An AI-powered personal system combining structured user data, context, backend workflows and personalized AI interactions.',
-    tags: ['AI', 'Python', 'FastAPI', 'PostgreSQL', 'Backend', 'AI Workflows'],
-    caseStudy: null,
-    github: null,
-    type: 'product',
-  },
-  {
-    number: '03',
     title: 'Atlas',
     category: 'BACKEND / ENGINEERING SYSTEM',
+    status: 'ACTIVE BUILD',
+    featured: true,
     description:
-      'A production-oriented backend system built with FastAPI, PostgreSQL and SQLAlchemy, designed with clean architecture, authentication, migrations and ownership boundaries so the system can evolve without requiring a rewrite as it grows.',
+      'A FastAPI backend built to demonstrate production-oriented engineering practices across APIs, authentication, authorization, database migrations, testing, CI and Docker.',
     tags: [
       'Python',
       'FastAPI',
       'PostgreSQL',
-      'SQLAlchemy',
+      'SQLAlchemy 2.0',
       'Alembic',
+      'pytest',
+      'GitHub Actions',
       'Docker',
-      'REST API',
-      'JWT',
-      'Backend Architecture',
     ],
     caseStudy: null,
     github: null,
     type: 'product',
   },
+
+  {
+    number: '03',
+    title: 'ThreatMap',
+    category: 'SECURITY / AUTOMATION',
+    status: 'OPEN SOURCE',
+    featured: true,
+    description:
+      'A terminal-first security assessment engine that orchestrates reconnaissance and vulnerability tools, runs assessment stages in parallel, and produces structured reports with AI-assisted triage.',
+    tags: [
+      'Python',
+      'Linux',
+      'Nmap',
+      'Nuclei',
+      'Parallel Execution',
+      'AI Triage',
+    ],
+    caseStudy: null,
+    github: null,
+    type: 'product',
+  },
+
   {
     number: '04',
-    title: 'Win Forensics',
-    category: 'SECURITY / DIGITAL FORENSICS',
+    title: 'Social Data Automation',
+    category: 'INTEGRATIONS / AUTOMATION',
+    status: 'CLIENT WORK',
     description:
-      'A Windows-focused digital forensics toolkit for collecting and analyzing system artifacts.',
-    tags: ['Python', 'Windows', 'Digital Forensics', 'Security Automation'],
+      'Python automation pipelines that collect data from external APIs, normalize and deduplicate records, then sync results into MySQL and Google Sheets.',
+    tags: [
+      'Python',
+      'APIs',
+      'MySQL',
+      'Google Sheets',
+      'Docker',
+      'Scheduled Workflows',
+    ],
     caseStudy: null,
     github: null,
     type: 'product',
   },
+
   {
     number: '05',
-    title: 'TECHNICAL CONSULTING',
-    category: 'TECHNICAL CONSULTING / CLIENT ENGINEERING',
+    title: 'Win Forensics',
+    category: 'SECURITY / DIGITAL FORENSICS',
+    status: 'OPEN SOURCE',
     description:
-      'Selected client engineering work across backend systems, automation, data extraction and deployment.',
-    tags: ['Python', 'Redis', 'MySQL', 'Docker', 'CI/CD'],
+      'A Windows-focused digital forensics toolkit for collecting and analyzing system artifacts with Python automation.',
+    tags: [
+      'Python',
+      'Windows',
+      'Digital Forensics',
+      'Security Automation',
+    ],
     caseStudy: null,
     github: null,
-    type: 'consulting',
-    engagements: [
-      {
-        title: 'Social → Google Sheets',
-        description:
-          'Built backend automation that fetched Facebook post comments and wrote them directly into Google Sheets. Contributed to backend implementation and research, with future work around token automation and extending the workflow to other platforms.',
-      },
-      {
-        title: 'Client Java Application',
-        description:
-          'Helped package a client\'s Java application with Docker to reduce environment conflicts and simplify local setup. Contributed to backend/technical research, Redis-related work and deployment workflows.',
-      },
-      {
-        title: 'Telegram Data Pipeline',
-        description:
-          'Built backend data extraction flow in Python for collecting data from multiple Telegram groups and storing processed data in MySQL. Contributed to Docker and CI/CD workflows.',
-      },
-    ],
+    type: 'product',
   },
 ];
 
