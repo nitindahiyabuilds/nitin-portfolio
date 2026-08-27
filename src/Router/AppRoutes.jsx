@@ -6,6 +6,7 @@ import Services from '../pages/About'
 import About from '../pages/Service'
 import ContactTerminal from '../pages/Contact'
 import Hero from '../pages/Hero'
+import Atlas from '../pages/Atlas'
 
 
 export default function AppRoutes() {
@@ -16,6 +17,7 @@ export default function AppRoutes() {
     
 
         <Route path="/projects" element={<Projects />} />
+        <Route path="/projects/atlas" element={<Atlas />} />
         <Route path="/services" element={<Services />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<ContactTerminal />} />

@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import Projectcard from '../components/Projectcard';
 import { projects } from '../constant';
 
@@ -28,7 +29,13 @@ const ProjectsPage = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.08 }}
             >
-              <Projectcard project={project} />
+              {project.title === 'Atlas' ? (
+                <Link to="/projects/atlas" className="block h-full">
+                  <Projectcard project={project} />
+                </Link>
+              ) : (
+                <Projectcard project={project} />
+              )}
             </motion.div>
           ))}
         </div>
