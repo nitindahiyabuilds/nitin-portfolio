@@ -22,7 +22,7 @@ const Hero = () => {
             className="w-full max-w-3xl text-center lg:text-left"
           >
             <span className="text-[#b9f2d4] text-[11px] tracking-[0.34em] uppercase mb-5 block font-medium">
-              AI &amp; BACKEND ENGINEER
+              AI ENGINEER — FORWARD DEPLOYED
             </span>
 
             <h1 className="text-white text-5xl sm:text-6xl md:text-7xl lg:text-[4.8rem] xl:text-[5.5rem] font-black tracking-[-0.07em] leading-[0.9] uppercase">
@@ -35,7 +35,7 @@ const Hero = () => {
               transition={{ delay: 0.4, duration: 1 }}
               className="mt-7 text-white/75 text-sm md:text-base max-w-xl lg:max-w-2xl leading-relaxed"
             >
-              I work across AI, backend systems, automation, security and infrastructure - with a bias toward building things that can actually grow.
+              I build AI-integrated products end-to-end — from the reasoning layer to the production backend that ships it. Currently solo-founding an AI coaching platform while working across security automation and backend systems.
             </motion.p>
 
             <motion.div
@@ -62,7 +62,7 @@ const Hero = () => {
             </motion.div>
 
             <div className="mt-10 flex flex-wrap justify-center lg:justify-start gap-2 text-center lg:text-left">
-              {['AI', 'BACKEND', 'AUTOMATION', 'SECURITY', 'DEVOPS'].map((item) => (
+              {['AI ENGINEERING', 'FORWARD DEPLOYED', 'BACKEND', 'SECURITY', 'AUTOMATION'].map((item) => (
                 <span
                   key={item}
                   className="border border-white/10 bg-white/[0.02] px-3 py-1.5 text-[9px] sm:text-[10px] uppercase tracking-[0.25em] text-white/75"

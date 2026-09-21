@@ -9,8 +9,7 @@ import Hero from './Hero'
 import Projects from './Projects'
 import About from './Service'
 import Experience from './Experience'
-
-
+import Thesis from './Thesis'
 
 export default function Home() {
   const { hash } = useLocation()
@@ -23,12 +22,10 @@ export default function Home() {
     })
   }, [hash])
 
-  
-
   return (
     <>
-    
       <Hero />
+      <Thesis />
       <CurrentlyBuilding />
       <SkillSlider />
       <About />

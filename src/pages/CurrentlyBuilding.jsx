@@ -1,6 +1,13 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
+const buildLog = [
+  {
+    date: 'JUL 2025',
+    update: 'Building the longitudinal coaching loop — using a user\'s historical data to improve future LLM recommendations over time.',
+  },
+];
+
 const CurrentlyBuilding = () => {
   return (
     <section id="currently-building" className="py-14 px-6 bg-black border-t border-white/5">
@@ -26,15 +33,25 @@ const CurrentlyBuilding = () => {
 
           <div className="mt-6 md:mt-0 md:max-w-xl">
             <p className="text-sm leading-relaxed text-white/75">
-              An AI-powered coaching product that combines persistent user data, deterministic analysis and contextual LLM reasoning to generate personalized recommendations.
+              An AI coaching platform with a deterministic computation layer that scores and tracks user data, and an LLM reasoning layer that uses that structured context to generate personalized recommendations. The separation between what can be computed and what needs to be reasoned is the core architectural decision.
             </p>
+
             <div className="mt-6 border-t border-white/10 pt-4">
-              <p className="text-[10px] uppercase tracking-[0.28em] text-[#b9f2d4] mb-2">
-                CURRENT FOCUS
+              <p className="text-[10px] uppercase tracking-[0.28em] text-[#b9f2d4] mb-3">
+                BUILD LOG
               </p>
-              <p className="text-sm leading-relaxed text-white/60">
-                Building the longitudinal coaching loop that uses a user's historical data to improve future recommendations.
-              </p>
+              <ul className="space-y-3">
+                {buildLog.map((entry, i) => (
+                  <li key={i} className="flex gap-4 items-start">
+                    <span className="text-[9px] uppercase tracking-[0.28em] text-white/35 font-mono shrink-0 pt-0.5">
+                      {entry.date}
+                    </span>
+                    <span className="text-sm leading-relaxed text-white/60">
+                      {entry.update}
+                    </span>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
         </motion.div>

@@ -6,7 +6,7 @@ export const projects = [
     status: 'BUILDING',
     featured: true,
     description:
-      'An AI-powered coaching product that combines persistent user data, deterministic analysis and LLM reasoning to generate context-aware recommendations.',
+      'An AI coaching platform built with two distinct layers: a deterministic computation layer that scores and tracks user data over time, and an LLM reasoning layer that uses that structured context to generate personalized, non-generic recommendations. The architecture separates what can be computed from what needs to be reasoned — that separation is the product.',
     tags: [
       'Next.js',
       'TypeScript',
@@ -50,7 +50,7 @@ export const projects = [
     status: 'OPEN SOURCE',
     featured: true,
     description:
-      'A terminal-first security assessment engine that orchestrates reconnaissance and vulnerability tools, runs assessment stages in parallel, and produces structured reports with AI-assisted triage.',
+      'A terminal-first security assessment engine that orchestrates recon and vulnerability tools in parallel, automating 90%+ of a manual security assessment workflow. Produces structured HTML, Excel, and JSON reports with AI-assisted triage. Open source — adopted by other security practitioners.',
     tags: [
       'Python',
       'Linux',
@@ -86,11 +86,24 @@ export const projects = [
 
   {
     number: '05',
+    title: 'Roast Arena',
+    category: 'REALTIME / BACKEND SYSTEM',
+    status: 'IN DEVELOPMENT',
+    description:
+      'Realtime multiplayer web app backend managing live battle state, submissions, and voting across concurrent clients. Built with another developer — I own the backend architecture, PostgreSQL data model, Prisma ORM layer, auth, and real-time data consistency.',
+    tags: ['PostgreSQL', 'Prisma', 'Realtime', 'WebSockets', 'Auth'],
+    caseStudy: null,
+    github: null,
+    type: 'product',
+  },
+
+  {
+    number: '06',
     title: 'Win Forensics',
     category: 'SECURITY / DIGITAL FORENSICS',
     status: 'OPEN SOURCE',
     description:
-      'A Windows-focused digital forensics toolkit for collecting and analyzing system artifacts with Python automation.',
+      'A Windows digital forensics toolkit that automates 80%+ of forensic artifact collection — including DPAPI-wrapped key derivation and OS-EOF encrypted SQLite decryption. Used in active law enforcement investigations at the National Cyber Forensics Lab / Delhi Police.',
     tags: [
       'Python',
       'Windows',

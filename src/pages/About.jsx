@@ -4,15 +4,15 @@ import { motion } from 'framer-motion';
 const capabilities = [
   {
     id: '01',
-    title: 'Backend Systems',
-    description: 'Designing APIs and backend systems that are structured to evolve - from data models and authentication to integrations, background workflows and deployment.',
-    tags: ['FastAPI', 'PostgreSQL', 'REST', 'SQL', 'Docker'],
+    title: 'AI Engineering',
+    description: 'Building AI systems where the architecture actually matters. In AI Coach I designed a deterministic computation layer (scoring, tracking, structured context) separate from the LLM reasoning layer — so the model gets real signal, not noise. In ThreatMap, AI-assisted triage sits on top of structured tool output. Not AI for the sake of AI.',
+    tags: ['LLMs', 'AI Workflows', 'RAG', 'Python', 'APIs'],
   },
   {
     id: '02',
-    title: 'AI Engineering',
-    description: 'Building practical AI systems around real products - LLM workflows, context, agents, APIs and automation rather than AI for the sake of AI.',
-    tags: ['LLMs', 'AI Workflows', 'RAG', 'Python', 'APIs'],
+    title: 'Backend Systems',
+    description: 'Designing APIs and backend systems that are structured to evolve - from data models and authentication to integrations, background workflows and deployment.',
+    tags: ['FastAPI', 'PostgreSQL', 'REST', 'SQL', 'Docker'],
   },
   {
     id: '03',
