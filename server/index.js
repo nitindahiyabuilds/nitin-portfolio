@@ -35,20 +35,23 @@ app.post('/api/contact', async (req, res) => {
   }
 
   try {
-    await ContactSubmission.create(trimmed)
-    return res.status(201).json({ ok: true })
+    if (ContactSubmission && process.env.DATABASE_URL) {
+      await ContactSubmission.create(trimmed);
+    } else {
+      console.log('Received contact submission (offline mode):', trimmed);
+    }
+    return res.status(201).json({ ok: true });
   } catch (err) {
-    console.error('Contact save error:', err)
-    return res.status(500).json({ error: 'Could not save message' })
+    console.error('Contact save error:', err);
+    return res.status(500).json({ error: 'Could not save message' });
   }
-})
+});
 
 try {
-  await connectdb()
+  await connectdb();
   app.listen(PORT, () => {
-    console.log(`API listening on http://localhost:${PORT}`)
-  })
+    console.log(`API listening on http://localhost:${PORT}`);
+  });
 } catch (err) {
-  console.error('Failed to start server:', err)
-  process.exit(1)
+  console.error('Failed to start server:', err);
 }

@@ -6,7 +6,7 @@ export const projects = [
     status: 'BUILDING',
     featured: true,
     description:
-      'An AI coaching platform built with two distinct layers: a deterministic computation layer that scores and tracks user data over time, and an LLM reasoning layer that uses that structured context to generate personalized, non-generic recommendations. The architecture separates what can be computed from what needs to be reasoned — that separation is the product.',
+      'An AI coaching platform built with two distinct layers: a deterministic computation layer that scores and tracks user data over time, and an LLM reasoning layer that uses structured context for personalized recommendations.',
     tags: [
       'Next.js',
       'TypeScript',
@@ -22,7 +22,7 @@ export const projects = [
 
   {
     number: '02',
-    title: 'Atlas',
+    title: 'Forge API',
     category: 'BACKEND / ENGINEERING SYSTEM',
     status: 'ACTIVE BUILD',
     featured: true,
@@ -50,7 +50,7 @@ export const projects = [
     status: 'OPEN SOURCE',
     featured: true,
     description:
-      'A terminal-first security assessment engine that orchestrates recon and vulnerability tools in parallel, automating 90%+ of a manual security assessment workflow. Produces structured HTML, Excel, and JSON reports with AI-assisted triage. Open source — adopted by other security practitioners.',
+      'A terminal-first security assessment engine that orchestrates recon and vulnerability tools in parallel, automating 90%+ of manual workflows with AI-assisted triage and structured reports.',
     tags: [
       'Python',
       'Linux',
@@ -90,7 +90,7 @@ export const projects = [
     category: 'REALTIME / BACKEND SYSTEM',
     status: 'IN DEVELOPMENT',
     description:
-      'Realtime multiplayer web app backend managing live battle state, submissions, and voting across concurrent clients. Built with another developer — I own the backend architecture, PostgreSQL data model, Prisma ORM layer, auth, and real-time data consistency.',
+      'Realtime multiplayer web app backend managing live battle state, submissions, and voting across concurrent clients, built with PostgreSQL, Prisma, WebSockets, and Redis.',
     tags: ['PostgreSQL', 'Prisma', 'Realtime', 'WebSockets', 'Auth'],
     caseStudy: null,
     github: null,
@@ -103,7 +103,7 @@ export const projects = [
     category: 'SECURITY / DIGITAL FORENSICS',
     status: 'OPEN SOURCE',
     description:
-      'A Windows digital forensics toolkit that automates 80%+ of forensic artifact collection — including DPAPI-wrapped key derivation and OS-EOF encrypted SQLite decryption. Used in active law enforcement investigations at the National Cyber Forensics Lab / Delhi Police.',
+      'A Windows digital forensics toolkit that automates 80%+ of forensic artifact collection, including DPAPI key derivation and encrypted SQLite decryption, used in active law enforcement investigations.',
     tags: [
       'Python',
       'Windows',
@@ -113,6 +113,24 @@ export const projects = [
     caseStudy: null,
     github: null,
     type: 'product',
+  },
+];
+
+export const writing = [
+  {
+    date: 'Jan 2025',
+    title: 'I Ditched VMware for a Windows + Kali Linux Dual Boot (2025 Edition)',
+    url: 'https://medium.com/@nitin_dahiya/i-ditched-vmware-for-a-windows-kali-linux-dual-boot-2025-edition-174bf7ee947b?sharedUserId=nitin_dahiya',
+  },
+  {
+    date: 'Oct 2024',
+    title: 'Building ThreatMap: Redefining Security Scanning with Local AI Triage',
+    url: 'https://medium.com/@nitin_dahiya/building-threatmap-redefining-security-scanning-with-local-ai-triage-d9f998392e6e?sharedUserId=nitin_dahiya',
+  },
+  {
+    date: 'Sep 2024',
+    title: 'The Local Storage Illusion: What I Discovered About Windows Security and Desktop Apps',
+    url: 'https://medium.com/@nitin_dahiya/the-local-storage-illusion-what-i-discovered-about-windows-security-and-desktop-apps-a0dcf786ce90',
   },
 ];
 

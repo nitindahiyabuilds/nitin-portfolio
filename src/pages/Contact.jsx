@@ -1,202 +1,79 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-
-const apiBase = import.meta.env.VITE_API_URL ?? ''
+import { FiMail, FiCheck, FiCopy, FiArrowUpRight } from 'react-icons/fi';
 
 const ContactTerminal = () => {
-  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
-  const [status, setStatus] = useState({ loading: false, success: null, error: null });
+  const [copied, setCopied] = useState(false);
+  const email = 'nitindahiya131@gmail.com';
 
-  // Update state dynamically as user types
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+  const copyEmail = () => {
+    navigator.clipboard.writeText(email);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
   };
-
-  // Handle form submission
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setStatus({ loading: true, success: null, error: null });
-
-    try {
-      const response = await fetch(`${apiBase || 'http://localhost:3001'}/api/contact`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
-      });
-
-      const data = await response.json();
-
-      if (response.ok) {
-        setStatus({ loading: false, success: 'Message sent successfully!', error: null });
-        setFormData({ name: '', email: '', message: '' }); // Clear form fields
-      } else {
-        setStatus({ loading: false, success: null, error: data.error || 'Something went wrong.' });
-      }
-    } catch (error) {
-      console.error(error);
-      setStatus({ loading: false, success: null, error: 'Failed to connect to the server.' });
-    }
-  };
-
-  const socialLinks = [
-    { name: 'GITHUB', href: 'https://github.com/nitindahiyabuilds' },
-    { name: 'X / TWITTER', href: 'https://x.com/nitin_builds?s=11' },
-    { name: 'MEDIUM', href: 'https://medium.com/@nitin_dahiya' },
-    { name: 'LINKEDIN', href: 'https://www.linkedin.com/in/nitin-dahiya-9848b3258/' },
-  ];
 
   return (
-    <section id="contact" className="py-24 px-6 bg-black border-t border-white/5">
-      <div className="max-w-4xl mx-auto">
-        
-        {/* Terminal Header Bar */}
-        <div className="bg-[#111] border border-white/10 rounded-t-md p-3 flex justify-between items-center">
-          <div className="flex gap-2">
-            <div className="w-2.5 h-2.5 bg-red-500/50 rounded-full" />
-            <div className="w-2.5 h-2.5 bg-yellow-500/50 rounded-full" />
-            <div className="w-2.5 h-2.5 bg-green-500/50 rounded-full" />
-          </div>
-          <span className="text-white/20 text-[9px] font-mono tracking-[0.3em] uppercase">
-            transmission_protocol.sh
-          </span>
-          <div className="w-10" />
-        </div>
-
-        {/* Terminal Body */}
-        <div className="bg-[#080808] border-x border-b border-white/10 rounded-b-md p-8 font-mono relative">
-          
-          <div className="mb-8 text-white/40 text-[11px] leading-relaxed">
-            <span className="text-accent">root@nitin:~$</span> ./initiate_contact <br />
-            Status: Secure Channel Established <br />
-            Encryption: AES-256 Enabled <br />
-            ------------------------------------------
+    <section id="contact" className="py-24 px-6 bg-[#f1ede6] border-t border-black/8 scroll-mt-16">
+      <div className="max-w-3xl mx-auto">
+        <motion.div
+          initial={{ opacity: 0, y: 12 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/70 border border-black/8 mb-4">
+            <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+            <span className="text-[11px] font-mono uppercase tracking-wider text-[#444]">
+              Open to Opportunities · Delhi &amp; Remote
+            </span>
           </div>
 
-          <div className="mb-8 border border-white/10 bg-white/[0.02] p-4">
-            <p className="text-[10px] uppercase tracking-[0.26em] text-white/40 mb-2">REMOTE — OPEN TO WORKING WITH PEOPLE EVERYWHERE</p>
-            <p className="text-sm text-white/70 leading-relaxed">
-              Always open to interesting conversations, ideas and people building things.
-            </p>
-          </div>
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-[#111] tracking-tight mb-3">
+            Let's connect.
+          </h2>
 
-          <div className="mb-8 flex flex-wrap gap-4">
-            {socialLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[10px] uppercase tracking-[0.24em] text-white/70 border-b border-white/15 pb-1 transition-colors hover:text-white hover:border-accent"
-              >
-                {link.name}
-              </a>
-            ))}
-          </div>
+          <p className="text-base text-[#555] leading-relaxed max-w-lg mb-8">
+            Always open to discussing engineering roles, interesting problems, or what you're building. Feel free to reach out directly.
+          </p>
 
-          <form onSubmit={handleSubmit} className="space-y-8">
-            {/* Name Input */}
-            <div className="group">
-              <label className="text-white/30 text-[10px] uppercase tracking-widest block mb-2 group-focus-within:text-white transition-colors">
-                01_Identify_User (Name)
-              </label>
-              <div className="flex items-center gap-3">
-                <span className="text-accent">{`>`}</span>
-                <input 
-                  type="text" 
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  className="bg-transparent border-none outline-none text-white w-full text-sm" 
-                  placeholder="enter_alias..."
-                  required
-                />
+          {/* Email card */}
+          <div className="p-6 rounded-2xl bg-white border border-black/10 shadow-sm flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 max-w-xl">
+            <div className="flex items-center gap-3">
+              <div className="w-11 h-11 rounded-xl bg-[#f1ede6] flex items-center justify-center text-[#111]">
+                <FiMail className="text-lg" />
               </div>
-            </div>
-
-            {/* Email Input */}
-            <div className="group">
-              <label className="text-white/30 text-[10px] uppercase tracking-widest block mb-2 group-focus-within:text-white transition-colors">
-                02_Return_Coordinates (Email)
-              </label>
-              <div className="flex items-center gap-3">
-                <span className="text-accent">{`>`}</span>
-                <input 
-                  type="email" 
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  className="bg-transparent border-none outline-none text-white w-full text-sm" 
-                  placeholder="user@domain.com"
-                  required
-                />
-              </div>
-            </div>
-
-            {/* Message Input */}
-            <div className="group">
-              <label className="text-white/30 text-[10px] uppercase tracking-widest block mb-2 group-focus-within:text-white transition-colors">
-                03_Payload_Details (Message)
-              </label>
-              <div className="flex items-start gap-3">
-                <span className="text-accent mt-1">{`>`}</span>
-                <textarea 
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  rows={4}
-                  className="bg-transparent border-none outline-none text-white w-full text-sm resize-none" 
-                  placeholder="type_your_message_here..."
-                  required
-                />
-              </div>
-            </div>
-
-            {/* Submit Button */}
-            <div className="pt-4 flex flex-col gap-4 sm:flex-row sm:justify-between sm:items-end">
-              <div className="text-[9px] text-white/10 uppercase tracking-widest font-mono">
-                System_Time: {new Date().toLocaleTimeString()}
-              </div>
-              <div className="flex flex-col items-end gap-2">
-                {status.error && (
-                  <p className="text-[9px] text-red-400/90 font-mono uppercase tracking-widest max-w-xs text-right">
-                    {status.error}
-                  </p>
-                )}
-                <motion.button
-                  whileHover={{ scale: status.loading ? 1 : 1.05 }}
-                  whileTap={{ scale: status.loading ? 1 : 0.95 }}
-                  type="submit"
-                  disabled={status.loading}
-                  className="bg-white text-black px-8 py-3 text-[10px] font-bold uppercase tracking-widest hover:bg-accent transition-colors disabled:opacity-50 disabled:pointer-events-none"
+              <div>
+                <p className="text-[11px] font-mono uppercase tracking-wider text-[#777]">Direct Inbox</p>
+                <a
+                  href={`mailto:${email}`}
+                  className="text-base sm:text-lg font-bold text-[#111] hover:underline underline-offset-4"
                 >
-                  {status.loading ? 'Transmitting…' : 'Execute_Transfer'}
-                </motion.button>
+                  {email}
+                </a>
               </div>
             </div>
-          </form>
 
-          {/* Success State Overlay */}
-          {status.success && (
-            <motion.div 
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              className="absolute inset-0 bg-black/95 flex flex-col items-center justify-center z-20 text-center p-6"
-            >
-              <div className="w-12 h-12 border border-accent rounded-full flex items-center justify-center mb-4">
-                <div className="w-2 h-2 bg-accent animate-ping" />
-              </div>
-              <h4 className="text-white font-mono text-sm uppercase tracking-[0.5em] mb-2">Transmission_Sent</h4>
-              <p className="text-white/40 text-[10px] uppercase font-mono tracking-widest">Payload received. standby for response.</p>
-              <button 
-                type="button"
-                onClick={() => setStatus({ loading: false, success: null, error: null })}
-                className="mt-8 text-[9px] text-accent underline uppercase tracking-widest"
+            <div className="flex items-center gap-2 w-full sm:w-auto">
+              <a
+                href={`mailto:${email}`}
+                className="flex-1 sm:flex-none px-4 py-2 rounded-lg bg-[#111] text-white text-xs font-semibold uppercase tracking-wider hover:bg-black/80 transition-colors inline-flex items-center justify-center gap-1.5"
               >
-                Send_New_Packet
+                <span>Compose</span>
+                <FiArrowUpRight className="text-sm" />
+              </a>
+
+              <button
+                onClick={copyEmail}
+                title="Copy email to clipboard"
+                className="px-3 py-2 rounded-lg border border-black/15 bg-white text-[#333] hover:border-black/40 hover:bg-black/5 transition-all text-xs font-mono inline-flex items-center gap-1.5 cursor-pointer"
+              >
+                {copied ? <FiCheck className="text-emerald-600 text-sm" /> : <FiCopy className="text-sm" />}
+                <span>{copied ? 'Copied' : 'Copy'}</span>
               </button>
-            </motion.div>
-          )}
-        </div>
+            </div>
+          </div>
+
+        </motion.div>
       </div>
     </section>
   );

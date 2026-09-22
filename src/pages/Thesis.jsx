@@ -1,20 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-
-const thesisBlocks = [
-  {
-    id: '01',
-    text: "I don't take tickets well. I want to understand the problem, own the system, and ship something that works in production — not hand it off at the PR boundary. That's why I build end-to-end: AI layer, backend, infra, security. It's how I'm proving I can run the full stack of a startup engineer before I actually run a startup.",
-  },
-  {
-    id: '02',
-    text: "Forward Deployed means working close to real, messy problems — not abstracted ones. I did that at the National Cyber Forensics Lab writing tools used in active investigations, and I do it now building AI Coach where I am the user, the engineer, and the product manager simultaneously.",
-  },
-  {
-    id: '03',
-    text: "Right now I am solo-founding AI Coach and open to FDE / AI engineering roles at startups where I can do the same kind of work at higher leverage — shipping AI-integrated systems close to the customer, not maintaining internal tooling three layers from the problem.",
-  },
-];
+import { thesis } from '../constant';
 
 const Thesis = () => {
   return (
@@ -31,22 +17,35 @@ const Thesis = () => {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-px bg-white/5 border border-white/5">
-          {thesisBlocks.map((block, index) => (
+          {thesis.map((block, index) => (
             <motion.div
-              key={block.id}
+              key={block.number}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7, delay: index * 0.12 }}
-              className="bg-black p-8 md:p-10 group relative overflow-hidden transition-all duration-500 hover:bg-[#080808]"
+              className="bg-black p-8 md:p-10 group relative overflow-hidden transition-all duration-500 hover:bg-[#080808] flex flex-col"
             >
-              <div className="relative z-10">
-                <span className="text-[#b9f2d4] font-mono text-xs mb-6 block tracking-widest">
-                  [{block.id}]
+              <div className="relative z-10 flex flex-col flex-1">
+                <span className="text-[#b9f2d4] font-mono text-xs mb-4 block tracking-widest">
+                  [{block.number}]
                 </span>
-                <p className="text-white/70 text-sm leading-relaxed">
-                  {block.text}
+                <h3 className="text-white text-base font-bold uppercase tracking-tight mb-3">
+                  {block.title}
+                </h3>
+                <p className="text-white/85 text-sm leading-relaxed flex-1">
+                  {block.blurb}
                 </p>
+                {block.link?.url && (
+                  <a
+                    href={block.link.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-6 text-[10px] uppercase tracking-[0.28em] text-[#b9f2d4] hover:text-white transition-colors self-start"
+                  >
+                    {block.link.label}
+                  </a>
+                )}
               </div>
               <div className="absolute top-0 left-0 w-1 h-0 bg-[#b9f2d4] transition-all duration-500 group-hover:h-full" />
             </motion.div>

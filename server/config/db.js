@@ -12,16 +12,29 @@ dotenv.config({ path: path.resolve(__dirname, '../.env') });
 
 const connectionString = process.env.DATABASE_URL;
 
-export const pool = new Pool({
-  connectionString,
-  ssl: { 
-    require: true, 
-    rejectUnauthorized: false 
-  }
-});
+const isRemoteSSL = connectionString && (
+  connectionString.includes('sslmode=require') || 
+  connectionString.includes('neon.tech') ||
+  connectionString.includes('supabase')
+);
+
+export const pool = connectionString
+  ? new Pool({
+      connectionString,
+      ...(isRemoteSSL ? { ssl: { require: true, rejectUnauthorized: false } } : {})
+    })
+  : null;
 
 export default async function connectdb() {
-  const client = await pool.connect();
-  console.log('Database connected successfully to Neon PostgreSQL');
-  client.release();
+  if (!pool) {
+    console.log('ℹ️ No DATABASE_URL set. Running in offline/mock mode for database.');
+    return;
+  }
+  try {
+    const client = await pool.connect();
+    console.log('Database connected successfully');
+    client.release();
+  } catch (err) {
+    console.warn('⚠️ Database connection warning:', err.message);
+  }
 }

@@ -1,97 +1,150 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { FaXTwitter, FaGithub, FaLinkedinIn, FaMedium } from 'react-icons/fa6';
 import nitinBitmoji from '../assets/nitin-bitmoji.png';
 
 const Hero = () => {
+  const socialSigns = [
+    {
+      id: 'x',
+      label: 'X (Twitter)',
+      icon: FaXTwitter,
+      url: 'https://x.com/nitin_builds',
+    },
+    {
+      id: 'github',
+      label: 'GitHub',
+      icon: FaGithub,
+      url: 'https://github.com/nitindahiyabuilds',
+    },
+    {
+      id: 'linkedin',
+      label: 'LinkedIn',
+      icon: FaLinkedinIn,
+      url: 'https://www.linkedin.com/in/nitin-dahiya-9848b3258/',
+    },
+    {
+      id: 'medium',
+      label: 'Medium',
+      icon: FaMedium,
+      url: 'https://medium.com/@nitin_dahiya',
+    },
+  ];
+
   return (
-    <section className="relative w-full min-h-screen flex items-center justify-center overflow-hidden bg-black">
-      <div
-        className="absolute inset-0 z-0 opacity-20"
-        style={{
-          backgroundImage: `linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px)`,
-          backgroundSize: '40px 40px',
-        }}
-      />
-
-      <div className="relative z-10 w-full max-w-7xl px-4 sm:px-6 lg:px-10 py-20 md:py-28">
-        <div className="flex flex-col items-center justify-center lg:flex-row lg:items-end lg:justify-between gap-8 lg:gap-10">
+    <section className="w-full min-h-[90vh] flex items-center bg-[#f9f7f3] pt-20 pb-16">
+      <div className="max-w-5xl mx-auto px-6 w-full">
+        <div className="flex flex-col-reverse lg:flex-row items-center justify-between gap-12 lg:gap-14">
+          
+          {/* Left: Text & Actions */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: 'easeOut' }}
-            className="w-full max-w-3xl text-center lg:text-left"
+            transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+            className="w-full lg:max-w-xl text-left"
           >
-            <span className="text-[#b9f2d4] text-[11px] tracking-[0.34em] uppercase mb-5 block font-medium">
-              AI ENGINEER — FORWARD DEPLOYED
-            </span>
+            {/* Live status badge */}
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#f1ede6] border border-black/8 mb-6">
+              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+              <span className="text-[11px] font-mono tracking-wider uppercase text-[#444]">
+                Engineer · Builder · Problem Solver
+              </span>
+            </div>
 
-            <h1 className="text-white text-5xl sm:text-6xl md:text-7xl lg:text-[4.8rem] xl:text-[5.5rem] font-black tracking-[-0.07em] leading-[0.9] uppercase">
+            {/* Biggest highlighted heading */}
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[4.25rem] font-black tracking-[-0.04em] leading-[0.96] uppercase text-[#111]">
               BUILDING WITH INTENT.
             </h1>
 
+            {/* Subtext description */}
             <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ delay: 0.4, duration: 1 }}
-              className="mt-7 text-white/75 text-sm md:text-base max-w-xl lg:max-w-2xl leading-relaxed"
+              transition={{ delay: 0.2, duration: 0.7 }}
+              className="mt-6 text-[#444] text-base sm:text-lg leading-[1.7] max-w-lg"
             >
-              I build AI-integrated products end-to-end — from the reasoning layer to the production backend that ships it. Currently solo-founding an AI coaching platform while working across security automation and backend systems.
+              I build AI-integrated products and resilient backends - combining deep systems engineering with customer-facing agility and a security-first approach. High passion to build, learn fast, and ship things that matter.
             </motion.p>
 
+            {/* CTAs & Social Signs */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.6 }}
-              className="mt-10 flex flex-wrap justify-center lg:justify-start gap-4"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.35, duration: 0.6 }}
+              className="mt-9 flex flex-wrap items-center gap-4"
             >
-              <a
-                href="#projects"
-                className="inline-flex items-center justify-center px-6 py-3 border border-white/15 rounded-full bg-white text-black text-[10px] uppercase tracking-[0.22em] font-bold transition-colors duration-300 hover:bg-transparent hover:text-white"
+              {/* Primary action */}
+              <button
+                onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
+                className="px-6 py-3 rounded-full bg-[#111] text-[#f9f7f3] text-xs uppercase tracking-widest font-semibold hover:bg-black/80 transition-all cursor-pointer shadow-sm"
               >
-                VIEW MY WORK
-              </a>
+                View Work ↓
+              </button>
 
-              <a
-                href="https://github.com/nitindahiyabuilds"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center px-6 py-3 border border-white/15 rounded-full text-[10px] uppercase tracking-[0.22em] font-bold text-white hover:border-white/30 hover:bg-white/5 transition-colors duration-300"
+              <button
+                onClick={() => document.getElementById('currently-building')?.scrollIntoView({ behavior: 'smooth' })}
+                className="px-5 py-3 rounded-full border border-black/15 text-[#222] text-xs uppercase tracking-widest font-medium hover:border-black/40 hover:bg-black/5 transition-all cursor-pointer bg-transparent"
               >
-                GITHUB
-              </a>
+                What I'm Building
+              </button>
+
+              {/* Direct Social Signs / Logos (no usernames or URLs visible) */}
+              <div className="flex items-center gap-2 pl-2 border-l border-black/10">
+                {socialSigns.map((item) => {
+                  const Icon = item.icon;
+                  return (
+                    <a
+                      key={item.id}
+                      href={item.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      title={item.label}
+                      aria-label={item.label}
+                      className="w-10 h-10 rounded-full border border-black/12 bg-white flex items-center justify-center text-[#222] hover:text-black hover:border-black hover:shadow-sm hover:-translate-y-0.5 transition-all"
+                    >
+                      <Icon className="text-base" />
+                    </a>
+                  );
+                })}
+              </div>
             </motion.div>
-
-            <div className="mt-10 flex flex-wrap justify-center lg:justify-start gap-2 text-center lg:text-left">
-              {['AI ENGINEERING', 'FORWARD DEPLOYED', 'BACKEND', 'SECURITY', 'AUTOMATION'].map((item) => (
-                <span
-                  key={item}
-                  className="border border-white/10 bg-white/[0.02] px-3 py-1.5 text-[9px] sm:text-[10px] uppercase tracking-[0.25em] text-white/75"
-                >
-                  {item}
-                </span>
-              ))}
-            </div>
-
-            <div className="mt-8 text-center lg:text-left">
-              <p className="text-[10px] uppercase tracking-[0.35em] text-white/50">CURRENTLY BUILDING</p>
-              <p className="mt-3 text-[11px] uppercase tracking-[0.2em] text-[#b9f2d4]">AI LIFESTYLE SYSTEM</p>
-            </div>
           </motion.div>
 
+          {/* Right: Nitin's Bitmoji Cartoon Illustration in its place */}
           <motion.div
-            initial={{ opacity: 0, x: 20, y: 10 }}
-            animate={{ opacity: 1, x: 0, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.5, ease: 'easeOut' }}
-            whileHover={{ y: -4, scale: 1.02, rotate: -1 }}
-            className="w-full max-w-[440px] lg:w-[38%] xl:w-[40%] flex justify-center lg:justify-end lg:pb-8"
+            initial={{ opacity: 0, scale: 0.94, y: 20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
+            className="w-full lg:w-auto flex justify-center lg:justify-end"
           >
-            <img
-              src={nitinBitmoji}
-              alt="Nitin Dahiya bitmoji illustration"
-              className="w-[260px] sm:w-[300px] md:w-[340px] lg:w-[360px] xl:w-[390px] object-contain opacity-95"
-              style={{ filter: 'contrast(1.05) saturate(0.9)' }}
-            />
+            <div className="relative group">
+              {/* Ambient backdrop glow */}
+              <div className="absolute -inset-2 bg-gradient-to-tr from-black/5 via-amber-500/10 to-transparent rounded-3xl blur-xl opacity-60 group-hover:opacity-100 transition-opacity duration-500" />
+
+              {/* Card framing for Bitmoji */}
+              <div className="relative rounded-2xl overflow-hidden border border-black/10 bg-[#0d0f12] shadow-xl max-w-[310px] sm:max-w-[360px] md:max-w-[380px] lg:max-w-[400px]">
+                <img
+                  src={nitinBitmoji}
+                  alt="Nitin Dahiya cartoon developer illustration"
+                  className="w-full h-auto object-cover block select-none transform transition-transform duration-700 ease-out group-hover:scale-[1.02]"
+                />
+
+                {/* Subtle overlay status bar */}
+                <div className="absolute bottom-3 left-3 right-3 py-2 px-3 bg-black/70 backdrop-blur-md rounded-xl border border-white/10 flex items-center justify-between text-white">
+                  <div className="flex items-center gap-2">
+                    <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                    <span className="text-[11px] font-mono font-medium tracking-wide text-white/90">
+                      Deep Work Mode
+                    </span>
+                  </div>
+                  <span className="text-[10px] font-mono text-white/50">
+                    Active Session
+                  </span>
+                </div>
+              </div>
+            </div>
           </motion.div>
+
         </div>
       </div>
     </section>

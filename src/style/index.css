@@ -1,16 +1,22 @@
 @import "tailwindcss";
 
+/* ────────────────────────────────────────────────────────
+   Design Tokens
+   ──────────────────────────────────────────────────────── */
 :root {
-  --color-bg: #0b1016;
-  --color-surface: #111a24;
-  --color-text: #f5f7fa;
-  --color-text-secondary: #dfe6ee;
-  --color-text-muted: #8b98a8;
-  --color-border: rgba(255,255,255,0.12);
-  --color-accent: #b9f2d4;
+  --bg:        #f9f7f3;
+  --surface:   #f1ede6;
+  --text:      #111111;
+  --text-2:    #444444;
+  --text-3:    #888888;
+  --border:    rgba(0, 0, 0, 0.07);
+  --border-md: rgba(0, 0, 0, 0.10);
 }
 
-* {
+/* ────────────────────────────────────────────────────────
+   Base Reset
+   ──────────────────────────────────────────────────────── */
+*, *::before, *::after {
   box-sizing: border-box;
 }
 
@@ -21,39 +27,106 @@ html {
 body {
   margin: 0;
   min-height: 100vh;
-  background: radial-gradient(circle at top, rgba(22, 33, 45, 0.9), var(--color-bg) 42%);
-  color: var(--color-text);
-  font-family: Inter, "Segoe UI", sans-serif;
-  line-height: 1.5;
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-::selection {
-  background: rgba(185, 242, 212, 0.25);
-  color: var(--color-text);
+/* ────────────────────────────────────────────────────────
+   Typography
+   ──────────────────────────────────────────────────────── */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+  color: var(--text);
+  margin: 0;
 }
 
+p {
+  margin: 0;
+}
+
+/* ────────────────────────────────────────────────────────
+   Links — Apple / editorial style (underline on hover)
+   ──────────────────────────────────────────────────────── */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* ────────────────────────────────────────────────────────
+   Selection
+   ──────────────────────────────────────────────────────── */
+::selection {
+  background: rgba(17, 17, 17, 0.10);
+  color: var(--text);
+}
+
+/* ────────────────────────────────────────────────────────
+   Focus
+   ──────────────────────────────────────────────────────── */
 :focus-visible {
-  outline: 2px solid var(--color-accent);
+  outline: 2px solid var(--text);
   outline-offset: 3px;
 }
 
-a,
-button,
-input,
-textarea,
-select {
+/* ────────────────────────────────────────────────────────
+   Form Elements
+   ──────────────────────────────────────────────────────── */
+a, button, input, textarea, select {
   font: inherit;
 }
 
-img,
-svg {
+/* ────────────────────────────────────────────────────────
+   Media
+   ──────────────────────────────────────────────────────── */
+img, svg {
   display: block;
   max-width: 100%;
 }
 
+/* ────────────────────────────────────────────────────────
+   Root
+   ──────────────────────────────────────────────────────── */
 #root {
   isolation: isolate;
+}
+
+/* ────────────────────────────────────────────────────────
+   Section Label utility (reused across all sections)
+   ──────────────────────────────────────────────────────── */
+.section-label {
+  font-size: 0.6875rem;   /* 11px */
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-3);
+}
+
+/* ────────────────────────────────────────────────────────
+   Pulsing status dot (used for BUILDING projects)
+   ──────────────────────────────────────────────────────── */
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.4; transform: scale(0.85); }
+}
+
+.pulse-dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--text);
+  animation: pulse-dot 2s ease-in-out infinite;
 }

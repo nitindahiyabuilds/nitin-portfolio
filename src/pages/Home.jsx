@@ -1,39 +1,45 @@
-import { useEffect } from 'react'
-import { useLocation } from 'react-router-dom'
-import SkillSlider from '../components/common/Skill-slider'
-import Footer from '../components/common/Footer'
-import Services from './About'
-import ContactTerminal from './Contact'
-import CurrentlyBuilding from './CurrentlyBuilding'
-import Hero from './Hero'
-import Projects from './Projects'
-import About from './Service'
-import Experience from './Experience'
-import Thesis from './Thesis'
+import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
+import SkillSlider from '../components/common/Skill-slider';
+import Footer from '../components/common/Footer';
+import Capabilities from './Capabilities';
+import ContactTerminal from './Contact';
+import CurrentlyBuilding from './CurrentlyBuilding';
+import Hero from './Hero';
+import Projects from './Projects';
+import SocialPresence from './SocialPresence';
+import Experience from './Experience';
+import Writing from './Writing';
 
 export default function Home() {
-  const { hash } = useLocation()
+  const { hash } = useLocation();
 
   useEffect(() => {
-    if (!hash) return
-    const id = hash.replace('#', '')
-    requestAnimationFrame(() => {
-      document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
-    })
-  }, [hash])
+    if (!hash) return;
+    const id = hash.replace('#', '');
+    const doScroll = () => {
+      const el = document.getElementById(id);
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    };
+    requestAnimationFrame(doScroll);
+    const timer = setTimeout(doScroll, 120);
+    return () => clearTimeout(timer);
+  }, [hash]);
 
   return (
     <>
       <Hero />
-      <Thesis />
       <CurrentlyBuilding />
       <SkillSlider />
-      <About />
       <Projects />
+      <Capabilities />
+      <SocialPresence />
       <Experience />
-      <Services />
+      <Writing />
       <ContactTerminal />
       <Footer />
     </>
-  )
+  );
 }
