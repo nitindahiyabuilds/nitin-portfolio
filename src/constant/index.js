@@ -15,8 +15,6 @@ export const projects = [
       'LLM APIs',
       'AI Workflows',
     ],
-    caseStudy: null,
-    github: null,
     type: 'product',
   },
 
@@ -38,8 +36,6 @@ export const projects = [
       'GitHub Actions',
       'Docker',
     ],
-    caseStudy: null,
-    github: null,
     type: 'product',
   },
 
@@ -59,8 +55,6 @@ export const projects = [
       'Parallel Execution',
       'AI Triage',
     ],
-    caseStudy: null,
-    github: null,
     type: 'product',
   },
 
@@ -79,8 +73,6 @@ export const projects = [
       'Docker',
       'Scheduled Workflows',
     ],
-    caseStudy: null,
-    github: null,
     type: 'product',
   },
 
@@ -92,8 +84,6 @@ export const projects = [
     description:
       'Realtime multiplayer web app backend managing live battle state, submissions, and voting across concurrent clients, built with PostgreSQL, Prisma, WebSockets, and Redis.',
     tags: ['PostgreSQL', 'Prisma', 'Realtime', 'WebSockets', 'Auth'],
-    caseStudy: null,
-    github: null,
     type: 'product',
   },
 
@@ -110,13 +100,21 @@ export const projects = [
       'Digital Forensics',
       'Security Automation',
     ],
-    caseStudy: null,
-    github: null,
     type: 'product',
   },
 ];
 
 export const writing = [
+  {
+    date: 'Feb 2025',
+    title: 'I Ran the Numbers on the AI Boom and Now I Can\'t Stop Thinking About It',
+    url: 'https://medium.com/@nitin_dahiya/i-ran-the-numbers-on-the-ai-boom-and-now-i-cant-stop-thinking-about-it-9fe4970c43c9?sharedUserId=nitin_dahiya',
+  },
+  {
+    date: 'Feb 2025',
+    title: 'The "Vibe Coder\'s" Security Paradox: How to Ship Fast Without Shipping Vulnerabilities',
+    url: 'https://medium.com/@nitin_dahiya/the-vibe-coders-security-paradox-how-to-ship-fast-without-shipping-vulnerabilities-070d7d102453?sharedUserId=nitin_dahiya',
+  },
   {
     date: 'Jan 2025',
     title: 'I Ditched VMware for a Windows + Kali Linux Dual Boot (2025 Edition)',

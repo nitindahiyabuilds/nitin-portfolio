@@ -129,18 +129,6 @@ const Hero = () => {
                   className="w-full h-auto object-cover block select-none transform transition-transform duration-700 ease-out group-hover:scale-[1.02]"
                 />
 
-                {/* Subtle overlay status bar */}
-                <div className="absolute bottom-3 left-3 right-3 py-2 px-3 bg-black/70 backdrop-blur-md rounded-xl border border-white/10 flex items-center justify-between text-white">
-                  <div className="flex items-center gap-2">
-                    <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                    <span className="text-[11px] font-mono font-medium tracking-wide text-white/90">
-                      Deep Work Mode
-                    </span>
-                  </div>
-                  <span className="text-[10px] font-mono text-white/50">
-                    Active Session
-                  </span>
-                </div>
               </div>
             </div>
           </motion.div>
