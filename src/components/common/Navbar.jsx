@@ -75,7 +75,7 @@ const Navbar = () => {
             </button>
           ))}
           <a
-            href="/resume/NitinDahiya_resume.pdf"
+            href="/resume/NitinDahiya_resume.pdf?v=2"
             target="_blank"
             rel="noopener noreferrer"
             className="text-sm text-[#888] hover:text-[#111] transition-colors"
@@ -122,7 +122,7 @@ const Navbar = () => {
               </button>
             ))}
             <a
-              href="/resume/NitinDahiya_resume.pdf"
+              href="/resume/NitinDahiya_resume.pdf?v=2"
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => setMenuOpen(false)}
